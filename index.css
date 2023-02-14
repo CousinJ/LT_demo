@@ -1,3 +1,29 @@
-h1 {
-    color: red
+body {
+    background-color: rgb(26, 26, 26);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    width: 60vw;
+    height: 50vh;
+    background-color: rgb(19, 19, 18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-actual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.submit-btn{
+    margin: 20%;
+    width: 10vw;
+    height: 4vh;
 }
