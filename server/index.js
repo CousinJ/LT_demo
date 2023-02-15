@@ -42,7 +42,8 @@ sequelize.sync().then(() => {console.log('tables created')}).catch(err => consol
 app.post('/api/user/', (req, res) => {
     const user_data = req.body;
     console.log(user_data, 'data posting to DB...')
-    User.create(user_data).then(() => {console.log('SUCCESS! data send over to DB.')}).catch(err => console.log(err));
+    //creating the data object
+    User.create(user_data).then(() => {console.log('SUCCESS! data sent over to DB.')}).catch(err => console.log(err));
     
 })
 
