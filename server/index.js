@@ -28,8 +28,8 @@ const User = sequelize.define('User', {
         type: Sequelize.STRING,
         allowNull: false,
     },
-    email: {
-        type: Sequelize.STRING,
+    age: {
+        type: Sequelize.INTEGER,
         allowNull: false,
 
     }
@@ -40,7 +40,10 @@ sequelize.sync().then(() => {console.log('tables created')}).catch(err => consol
 
 //enpoints
 app.post('/api/user/', (req, res) => {
-    console.log(req.body)
+    const user_data = req.body;
+    console.log(user_data, 'data posting to DB...')
+    User.create(user_data).then(() => {console.log('SUCCESS! data send over to DB.')}).catch(err => console.log(err));
+    
 })
 
 
