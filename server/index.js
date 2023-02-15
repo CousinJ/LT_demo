@@ -9,13 +9,7 @@ require('dotenv').config();
 const db_pass = process.env.DB_PASS;
 const port = process.env.PORT || 3000;
 
-
-
-
-
-
-
-
+//sequelize / connect
 const { Sequelize } = require('sequelize');
 
 const sequelize  = new Sequelize('my_database_1', 'root', `${db_pass}`, {
@@ -44,7 +38,7 @@ const User = sequelize.define('User', {
 sequelize.sync().then(() => {console.log('tables created')}).catch(err => console.log(err));
 
 
-
+//enpoints
 app.post('/api/user/', (req, res) => {
     console.log(req.body)
 })
