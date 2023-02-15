@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+//middleware
 app.use(cors());
 app.use(express.json());
 //dot env vars
@@ -17,10 +18,31 @@ const port = process.env.PORT || 3000;
 
 const { Sequelize } = require('sequelize');
 
-const sequelize  = new Sequelize('my_datbase_1', 'root', `${db_pass}`, {
+const sequelize  = new Sequelize('my_database_1', 'root', `${db_pass}`, {
     host: 'localhost',
     dialect: 'mysql'
 }) 
+
+//defining model of data
+const User = sequelize.define('User', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false,
+    },
+    email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+
+    }
+});
+//syncing table
+sequelize.sync().then(() => {console.log('tables created')}).catch(err => console.log(err));
+
 
 
 app.post('/api/user/', (req, res) => {
