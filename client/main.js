@@ -19,8 +19,8 @@ const handleSubmit = (event) => {
     event.preventDefault();
     alert('Thank you for your submission!')
     axios.post("http://localhost:3008/api/user/", data).then(successCB).catch(errorCB)
-    
- 
+    form.reset();
+
 
 }
 
