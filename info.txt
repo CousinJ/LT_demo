@@ -1,0 +1,11 @@
+to create local database,
+
+1. download mySQL workbench CE 8.0
+
+2. create an admin user (create password and username)
+
+3. select your local connection and enter your username and password
+
+4. click on create Schema at the top lefthand corner.
+
+5. enter the database name and your username and password into the new sequelize connection in the server index.js file.

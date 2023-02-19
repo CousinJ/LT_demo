@@ -5,7 +5,6 @@ const form = document.querySelector('#form');
 
 
 
-const data = {name: 'Yasuo', age: '22'}
 
 
 

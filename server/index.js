@@ -11,7 +11,8 @@ const port = process.env.PORT || 3000;
 
 //sequelize / connect
 const { Sequelize } = require('sequelize');
-
+//pass in datbase name and username and password for the database.
+//!!
 const sequelize  = new Sequelize('my_database_1', 'root', `${db_pass}`, {
     host: 'localhost',
     dialect: 'mysql'
